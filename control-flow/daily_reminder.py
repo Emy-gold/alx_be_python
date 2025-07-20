@@ -1,16 +1,25 @@
 # daily_reminder.py
 
-# Prompt for task details
+# Prompt for task description
 task = input("Enter your task: ")
-priority = input("Priority (high/medium/low): ").lower()
-time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Optional loop to confirm valid priority
-while priority not in ("high", "medium", "low"):
-    print("Please enter a valid priority: high, medium, or low.")
+# Prompt for valid priority level
+while True:
     priority = input("Priority (high/medium/low): ").lower()
+    if priority in ("high", "medium", "low"):
+        break
+    else:
+        print("Invalid input. Please enter 'high', 'medium', or 'low'.")
 
-# Provide reminder based on priority and time-bound flag
+# Prompt for time-bound flag
+while True:
+    time_bound = input("Is it time-bound? (yes/no): ").lower()
+    if time_bound in ("yes", "no"):
+        break
+    else:
+        print("Invalid input. Please enter 'yes' or 'no'.")
+
+# Process the task using match case
 match priority:
     case "high":
         message = f"'{task}' is a high priority task"
@@ -19,11 +28,15 @@ match priority:
     case "low":
         message = f"'{task}' is a low priority task"
 
-# Check if task is time-bound
+# Modify the message based on time sensitivity
 if time_bound == "yes":
     message += " that requires immediate attention today!"
 else:
     message += ". Consider completing it when you have free time."
 
-# Output the final reminder
+# Print the customized reminder
 print("\nReminder:", message)
+
+# Optional completion message
+print("\n✅ Well done on completing this project! Let the world hear about this milestone achieved.")
+print("🚀 Click here to tweet! 🚀")
