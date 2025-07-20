@@ -34,9 +34,9 @@ if time_bound == "yes":
 else:
     message += ". Consider completing it when you have free time."
 
-# Print the customized reminder
-print("\nReminder:", message)
+# ✅ Required line with Reminder:
+print(f"Reminder: {message}")
 
-# Optional completion message
+# Optional success message
 print("\n✅ Well done on completing this project! Let the world hear about this milestone achieved.")
 print("🚀 Click here to tweet! 🚀")
