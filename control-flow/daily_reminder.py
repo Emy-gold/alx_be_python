@@ -1,42 +1,36 @@
 # daily_reminder.py
 
-# Prompt for task description
+# Ask for the task
 task = input("Enter your task: ")
 
-# Prompt for valid priority level
+# Ask for the priority level
 while True:
     priority = input("Priority (high/medium/low): ").lower()
     if priority in ("high", "medium", "low"):
         break
-    else:
-        print("Invalid input. Please enter 'high', 'medium', or 'low'.")
+    print("Please enter a valid priority: high, medium, or low.")
 
-# Prompt for time-bound flag
+# Ask if time-bound
 while True:
     time_bound = input("Is it time-bound? (yes/no): ").lower()
     if time_bound in ("yes", "no"):
         break
-    else:
-        print("Invalid input. Please enter 'yes' or 'no'.")
+    print("Please enter yes or no.")
 
-# Process the task using match case
+# Match Case and direct Reminder print
 match priority:
     case "high":
-        message = f"'{task}' is a high priority task"
+        if time_bound == "yes":
+            print(f"Reminder: '{task}' is a high priority task that requires immediate attention today!")
+        else:
+            print(f"Reminder: '{task}' is a high priority task. Consider completing it when you have free time.")
     case "medium":
-        message = f"'{task}' is a medium priority task"
+        if time_bound == "yes":
+            print(f"Reminder: '{task}' is a medium priority task that requires immediate attention today!")
+        else:
+            print(f"Reminder: '{task}' is a medium priority task. Consider completing it when you have free time.")
     case "low":
-        message = f"'{task}' is a low priority task"
-
-# Modify the message based on time sensitivity
-if time_bound == "yes":
-    message += " that requires immediate attention today!"
-else:
-    message += ". Consider completing it when you have free time."
-
-# ✅ Required line with Reminder:
-print(f"Reminder: {message}")
-
-# Optional success message
-print("\n✅ Well done on completing this project! Let the world hear about this milestone achieved.")
-print("🚀 Click here to tweet! 🚀")
+        if time_bound == "yes":
+            print(f"Reminder: '{task}' is a low priority task that requires immediate attention today!")
+        else:
+            print(f"Reminder: '{task}' is a low priority task. Consider completing it when you have free time.")
