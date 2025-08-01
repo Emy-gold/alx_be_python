@@ -5,7 +5,7 @@ def display_current_datetime():
     formatted_date = current_date.strftime("%Y-%m-%d %H:%M:%S")
     print(f"Current date and time: {formatted_date}")
 
-def calsulate_future_date(days):
+def calulate_future_date(days):
     current_date = datetime.now()
     future_date = current_date + timedelta(days=days)
     formatted_future_date = future_date.strftime("%Y-%m-%d")
@@ -17,7 +17,7 @@ def main():
 
     try:
         days = int(input("Enter the number of days to add the current date: "))
-        calsulate_future_date(days)
+        calulate_future_date(days)
     except ValueError:
         print("Please enter a valid integer for the number of days.")
 
