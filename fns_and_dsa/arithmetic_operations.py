@@ -7,7 +7,7 @@ def perform_operation(num1, num2, operation):
         return num1 * num2
     elif operation == 'divide':
         if num2 == 0 :
-            print("We cant devide on 0 please choose another number")
+            return("We cant devide on 0 please choose another number")
         return num1 / num2
     else:
-        print("Please choose one of the mentioned operations!")
+        return("Please choose one of the mentioned operations!")
