@@ -16,6 +16,8 @@ def main():
         return convert_to_celsuis(temperature)
     elif temperature_type == "F":
         return convert_to_fahrenheit(temperature)
+    else :
+        print("Invalid temperature. Please enter a numeric value.")
     
 if __name__ == "__main__":
     main()
