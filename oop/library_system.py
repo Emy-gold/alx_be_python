@@ -12,7 +12,7 @@ class EBook(Book):
         self.file_size = file_size
 
     def __str__(self):
-        return f"{super().__str__()} [EBook, {self.file_size}KB]"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}"
 
 class PrintBook(Book):
     def __init__(self, title: str, author: str, page_count: int):
@@ -20,32 +20,15 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        return f"{super().__str__()} [Print, {self.page_count} pages]"
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 class Library:
     def __init__(self):
         self.books = []
 
-    def add_book(self, book: Book) -> None:
+    def add_book(self, book: Book):
         self.books.append(book)
-        print(f"Added book: {book}")
 
-    def list_books(self) -> None:
-        if not self.books:
-            print("The library has no books.")
-            return
-        
-        print("Library Books:")
-        for i, book in enumerate(self.books, 1):
-            print(f"{i}. {book}")
-
-if __name__ == "__main__":
-    my_library = Library()
-    
-    ebook = EBook("Python Crash Course", "Eric Matthes", 5120)
-    print_book = PrintBook("Clean Code", "Robert C. Martin", 464)
-    
-    my_library.add_book(ebook)
-    my_library.add_book(print_book)
-    
-    my_library.list_books()
+    def list_books(self):
+        for book in self.books:
+            print(book.get_details())
