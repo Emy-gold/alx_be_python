@@ -1,10 +1,10 @@
-from polymorphism_demo import Shape, Rectangle, Cicle
+from polymorphism_demo import Shape, Rectangle, Circle
 import math 
 
 def main():
     shapes = [
         Rectangle(10, 5),
-        Cicle(7)
+        Circle(7)
     ]
 
     for shape in shapes: 

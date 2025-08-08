@@ -12,7 +12,7 @@ class Rectangle(Shape):
     def area(self):
         return self.length * self.width
     
-class Cicle(Shape):
+class Circle(Shape):
     def __init__(self,raduis):
         self.raduis = raduis
 
